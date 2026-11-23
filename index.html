@@ -63,7 +63,7 @@
 </div>
 <div class="adminpanel">
   <h3>GitHub repository setup</h3>
-  <p>Before publishing can work, configure your repository details in the JavaScript settings: repository owner, repository name, target branch and the HTML file path. The token input alone cannot identify where to publish.</p>
+  <p>Publishing is configured for <b>boto80676-sudo/annamalaimotors</b>, branch <b>main</b>, file <b>index.html</b>. Your fine-grained token must be restricted to this repository and have <b>Contents: Read and write</b> permission.</p>
 </div>
 </div>
 <div id="activity" class="adminview" style="display:none"><div class="adminpanel"><h3>Activity logs</h3><p>Recent actions recorded in this browser.</p><table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody id="logRows"></tbody></table></div></div>
@@ -125,8 +125,8 @@ function editProduct(id){let p=products.find(x=>String(x.id)===String(id));if(!p
 function deleteProduct(id){if(!confirm('Delete this product?'))return;let p=products.find(x=>String(x.id)===String(id));products=products.filter(x=>String(x.id)!==String(id));persist();log('Deleted '+(p?.name||id));adminRender();renderProducts()}
 function log(msg){let a=JSON.parse(localStorage.getItem('mc_logs')||'[]');a.unshift({time:new Date().toLocaleString(),msg});localStorage.setItem('mc_logs',JSON.stringify(a.slice(0,100)))}
 // GitHub publishing settings. Fill these in before using Publish.
-const GITHUB_OWNER = 'YOUR_GITHUB_USERNAME';
-const GITHUB_REPO = 'YOUR_REPOSITORY_NAME';
+const GITHUB_OWNER = 'boto80676-sudo';
+const GITHUB_REPO = 'annamalaimotors';
 const GITHUB_BRANCH = 'main';
 const GITHUB_FILE_PATH = 'index.html';
 
@@ -134,7 +134,7 @@ async function publishToGitHub(){
   const token = $('githubToken').value.trim();
   const status = $('githubPublishStatus');
   if(!token){alert('Paste your GitHub fine-grained token first.');return;}
-  if(GITHUB_OWNER.startsWith('YOUR_') || GITHUB_REPO.startsWith('YOUR_')){
+  if(!GITHUB_OWNER || !GITHUB_REPO || GITHUB_OWNER.startsWith('YOUR_') || GITHUB_REPO.startsWith('YOUR_')){
     alert('Set GITHUB_OWNER and GITHUB_REPO in the JavaScript settings before publishing.');
     return;
   }
