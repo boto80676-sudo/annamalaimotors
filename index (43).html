@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MotoCare Hub | Bike Accessories & Care</title>
+<style>
+:root{--ink:#17212b;--muted:#697586;--line:#e5e9ef;--paper:#fff;--bg:#f5f7fa;--accent:#e85d24;--green:#168653;--blue:#0969da;--shadow:0 8px 28px #17212b0d}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--paper)}a{color:inherit;text-decoration:none}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:8px;padding:10px 15px;font-weight:700;transition:.18s}button:hover{transform:translateY(-1px);filter:brightness(.97)}.wrap{max-width:1220px;margin:auto;padding:0 24px}.topline{background:#14202b;color:#e7edf3;text-align:center;padding:9px;font-size:11px;font-weight:800;letter-spacing:1.3px}.header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.head{min-height:76px;display:flex;align-items:center;gap:28px}.brand{font-size:22px;font-weight:950;letter-spacing:-.8px;white-space:nowrap}.brand b{color:var(--accent)}.search{flex:1;display:flex;background:#f1f3f6;border:1px solid #e8ebef;border-radius:10px;padding:4px}.search input{width:100%;border:0;outline:0;background:transparent;padding:10px 12px}.search button{background:#17212b;color:#fff}.adminlink{font-size:13px;font-weight:800;color:#465363}.hero{background:radial-gradient(circle at 82% 35%,#52616d 0,#263542 27%,#111c27 70%);color:white;padding:76px 0;overflow:hidden}.hero-in{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:35px}.eyebrow{color:#ffb18b;font-size:11px;font-weight:900;letter-spacing:2.2px}.hero h1{font-size:clamp(38px,5.5vw,66px);line-height:1.02;letter-spacing:-2px;margin:15px 0}.hero p{color:#d0d9e0;line-height:1.8;max-width:570px}.cta{background:var(--accent);color:white;margin-top:14px;padding:13px 19px}.hero-art{font-size:clamp(110px,17vw,205px);text-align:center;filter:drop-shadow(0 22px 18px #0007);transform:rotate(-8deg)}.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;padding:24px 0}.trust div{background:#f6f8fa;border:1px solid #edf0f3;border-radius:12px;padding:17px;text-align:center;font-weight:800;font-size:13px}.section{padding:48px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:23px}.section h2{font-size:28px;letter-spacing:-.7px;margin:0 0 6px}.sub{color:var(--muted);font-size:14px}.brands{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}.brandtile{border:1px solid var(--line);border-radius:13px;text-align:center;padding:20px 8px;font-weight:850;background:white;cursor:pointer;transition:.2s}.brandtile:hover{border-color:#f2a17d;box-shadow:var(--shadow);transform:translateY(-3px)}.brandtile span{display:block;font-size:25px;margin-bottom:8px}.filters{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}.filters button{background:#edf0f3;color:#344252}.filters button.active{background:#17212b;color:white}.products{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.product{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:white;display:flex;flex-direction:column;transition:.2s}.product:hover{box-shadow:0 12px 30px #17212b12;transform:translateY(-3px)}.product-img{height:210px;background:linear-gradient(135deg,#f4f6f8,#e8edf1);display:flex;align-items:center;justify-content:center;overflow:hidden}.product-img img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}.product-img .emoji{font-size:76px}.product-body{padding:17px;display:flex;flex-direction:column;flex:1}.tag{font-size:10px;font-weight:950;color:var(--accent);letter-spacing:1px;text-transform:uppercase}.product h3{font-size:15px;line-height:1.45;min-height:44px;margin:8px 0}.price{font-weight:950;font-size:20px;margin:4px 0 14px}.old{color:#929ba3;text-decoration:line-through;font-size:13px;font-weight:400;margin-left:7px}.wa{background:#15965a;color:white;width:100%;margin-top:auto}.about{background:#f4f6f8}.aboutgrid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}.about p{color:var(--muted);line-height:1.85}.footer{background:#14202b;color:#d9e0e5;padding:42px 0}.footergrid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.footer small{color:#aab5bd}.floatwa{position:fixed;right:20px;bottom:20px;background:#18a45f;color:white;border-radius:50px;padding:14px 19px;box-shadow:0 5px 18px #0003;z-index:8}
+#admin{display:none;min-height:100vh;background:#f6f8fa;color:#1f2328}.adminbar{height:68px;background:#fff;border-bottom:1px solid #d1d9e0;display:flex;justify-content:space-between;align-items:center;padding:0 max(22px,calc((100% - 1180px)/2));gap:15px}.adminbrand{font-weight:900;font-size:18px;letter-spacing:-.4px}.adminbrand span{color:var(--accent)}.adminwrap{max-width:1180px;margin:26px auto;padding:0 22px}.admin-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin:10px 0 23px}.admin-heading h1{font-size:30px;letter-spacing:-1px;margin:0 0 5px}.admin-heading p{color:#59636e;margin:0;font-size:14px}.adminnav{display:flex;gap:5px;flex-wrap:wrap;border-bottom:1px solid #d8dee4;margin-bottom:22px}.adminnav button{background:transparent;color:#57606a;border-radius:7px 7px 0 0;padding:12px 15px;border-bottom:2px solid transparent}.adminnav button.sel{color:#1f2328;border-bottom-color:var(--accent);background:#fff}.adminpanel{background:#fff;border:1px solid #d1d9e0;border-radius:10px;padding:22px;margin:16px 0;box-shadow:0 1px 2px #1f23280a;overflow:auto}.adminpanel h2,.adminpanel h3{margin:0 0 8px;letter-spacing:-.3px}.adminpanel p{color:#59636e;line-height:1.6}.adminpanel input:not([type=checkbox]),.adminpanel select{padding:10px 12px;border:1px solid #d1d9e0;border-radius:7px;margin:6px 0 13px;width:100%;background:#fff;color:#1f2328}.adminpanel input:focus,.adminpanel select:focus{outline:2px solid #0969da33;border-color:#0969da}.formgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.primary{background:#238636;color:white}.danger{background:#cf222e;color:white}.mutedbtn{background:#f6f8fa;color:#24292f;border:1px solid #d1d9e0}.bluebtn{background:#0969da;color:#fff}.adminpanel table{width:100%;border-collapse:collapse;min-width:620px}.adminpanel th,.adminpanel td{text-align:left;border-bottom:1px solid #eaeef2;padding:13px 11px;font-size:13px}.adminpanel th{color:#59636e;font-weight:700;background:#fbfcfd}.metricgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.metric{background:#fff;border:1px solid #d1d9e0;padding:18px;border-radius:10px;color:#59636e;font-size:13px}.metric strong{display:block;color:#1f2328;font-size:29px;margin-top:7px}.loginbox{max-width:410px;margin:75px auto;background:white;padding:28px;border:1px solid #d1d9e0;border-radius:12px;box-shadow:var(--shadow)}.loginbox input{width:100%;padding:12px;margin:7px 0 15px;border:1px solid #d1d9e0;border-radius:7px}.notice{padding:13px 15px;background:#fff8c5;border:1px solid #eac54f;border-radius:8px;color:#6a5300;font-size:13px;line-height:1.6}.checks{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:14px 0 20px}.checks label{font-size:13px;display:flex;align-items:center;gap:8px;padding:10px;border:1px solid #e5e9ee;border-radius:7px}.checks input{accent-color:#0969da}.tokenintro{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.tokenintro .tokenicon{width:42px;height:42px;border-radius:10px;background:#ddf4ff;color:#0969da;display:grid;place-items:center;font-size:21px;flex-shrink:0}.token-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(250px,.8fr);gap:16px}.tokenout{word-break:break-all;background:#f6f8fa;border:1px solid #d1d9e0;padding:13px;border-radius:7px;margin:12px 0;font-family:ui-monospace,monospace;font-size:13px}.scope-pill{display:inline-block;background:#ddf4ff;color:#0550ae;border-radius:20px;padding:4px 8px;font-size:11px;font-weight:750;margin:2px}.status{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:750}.status:before{content:"";width:7px;height:7px;border-radius:50%;background:#1a7f37}.status.off:before{background:#cf222e}.empty{text-align:center;padding:25px;color:#687582}.adminview{animation:fade .2s ease}@keyframes fade{from{opacity:.5;transform:translateY(3px)}to{opacity:1;transform:none}}
+
+.github-publish{padding:28px}
+.github-publish h3{font-size:18px;color:#24143f;margin:0 0 12px}
+.github-publish p{font-size:14px;color:#6b6480;line-height:1.7;margin:0 0 18px}
+.github-publish label{display:block;color:#24143f;margin:16px 0 9px}
+.github-publish input{height:61px!important;border:1px solid #e7dcff!important;border-radius:16px!important;background:#faf7ff!important;padding:0 16px!important;font-size:17px!important}
+.github-publish-btn{background:#5b21b6;color:#fff;border-radius:999px;padding:16px 26px;font-size:15px;box-shadow:0 8px 16px #5b21b633}
+.github-publish .github-help{font-size:12px;margin:16px 0 0;color:#756d85}
+
+@media(max-width:760px){.wrap{padding:0 16px}.head{min-height:70px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;gap:12px}.search{order:3;flex-basis:100%}.hero{padding:52px 0}.hero-in,.aboutgrid{grid-template-columns:1fr}.hero-art{display:none}.trust{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(4,1fr)}.products{grid-template-columns:repeat(2,1fr);gap:10px}.product-img{height:145px}.product-body{padding:12px}.product h3{font-size:13px}.section{padding:32px 0}.footergrid{grid-template-columns:1fr 1fr}.formgrid,.token-layout{grid-template-columns:1fr}.metricgrid{grid-template-columns:1fr 1fr}.checks{grid-template-columns:repeat(2,1fr)}.adminbar{padding:0 15px}.adminwrap{padding:0 13px}.admin-heading{flex-direction:column}.adminpanel{padding:16px}.adminnav{overflow-x:auto;flex-wrap:nowrap}.adminnav button{white-space:nowrap}.tokenintro{flex-direction:column}}
+@media(max-width:420px){.products{grid-template-columns:1fr 1fr}.brands{grid-template-columns:repeat(3,1fr)}.brandtile{font-size:12px;padding:13px 5px}.metricgrid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div id="store">
+<div class="topline">BIKE CARE • RIDING ACCESSORIES • MAINTENANCE ESSENTIALS</div>
+<header class="header"><div class="wrap head"><a class="brand" href="#" onclick="showStore()"><b>MOTO</b>CARE HUB</a><div class="search"><input id="search" placeholder="Search bike accessories, cleaners, tools..." oninput="renderProducts()"><button onclick="renderProducts()">Search</button></div><a class="adminlink" href="#admin" onclick="openAdmin()">ADMIN ↗</a></div></header>
+<section class="hero"><div class="wrap hero-in"><div><div class="eyebrow">FOR EVERY RIDE. EVERY ROAD.</div><h1>Keep your ride<br>in top condition.</h1><p>Discover bike care essentials, riding accessories and useful tools. Find what you need and ask us directly on WhatsApp.</p><button class="cta" onclick="document.getElementById('catalogue').scrollIntoView({behavior:'smooth'})">EXPLORE PRODUCTS →</button></div><div class="hero-art">🏍️</div></div></section>
+<div class="wrap trust"><div>🛠️ Bike Care Essentials</div><div>🏁 Riding Accessories</div><div>📦 Product Enquiries</div><div>💬 WhatsApp Support</div></div>
+<section class="section"><div class="wrap"><div class="section-head"><div><h2>Shop by bike brand</h2><div class="sub">Choose your motorcycle brand to explore compatible products</div></div></div><div class="brands">
+<div class="brandtile" onclick="brandFilter('Yamaha')"><span>🔵</span>Yamaha</div><div class="brandtile" onclick="brandFilter('Honda')"><span>🔴</span>Honda</div><div class="brandtile" onclick="brandFilter('Hero')"><span>🟠</span>Hero</div><div class="brandtile" onclick="brandFilter('Bajaj')"><span>⚫</span>Bajaj</div><div class="brandtile" onclick="brandFilter('TVS')"><span>🔷</span>TVS</div><div class="brandtile" onclick="brandFilter('Royal Enfield')"><span>🟤</span>Royal Enfield</div><div class="brandtile" onclick="brandFilter('KTM')"><span>🟠</span>KTM</div>
+</div></div></section>
+<section class="section" id="catalogue" style="background:#fafbfc"><div class="wrap"><div class="section-head"><div><h2>Featured products</h2><div class="sub">Browse products and enquire directly. No cart or checkout.</div></div><span class="sub" id="resultCount"></span></div><div class="filters"><button class="active" onclick="setFilter('All',this)">All</button><button onclick="setFilter('Bike Care',this)">Bike Care</button><button onclick="setFilter('Accessories',this)">Accessories</button><button onclick="setFilter('Tools',this)">Tools</button><button onclick="setFilter('Modification',this)">Modification</button></div><div class="products" id="products"></div></div></section>
+<section class="section about"><div class="wrap aboutgrid"><div><div class="eyebrow">ABOUT OUR STORE</div><h2>Made for people who love their bikes.</h2><p>Explore practical bike-care products, maintenance essentials and riding accessories in one place. Need help choosing? Send a product enquiry through WhatsApp.</p><button class="cta" onclick="contactWhatsApp('Hello! I have a question about your bike products.')">CHAT WITH US</button></div><div style="font-size:100px;text-align:center">🧰 🏍️</div></div></section>
+<footer class="footer"><div class="wrap footergrid"><div><div class="brand" style="color:white"><b>MOTO</b>CARE HUB</div><p>Bike care and riding accessories, made easy.</p><small>Product names and reference prices are illustrative starter catalogue entries. Confirm availability and compatibility by WhatsApp.</small></div><div><b>Explore</b><p><a href="#catalogue">Products</a></p><p><a href="#catalogue">Bike Care</a></p><p><a href="#catalogue">Accessories</a></p></div><div><b>Contact</b><p>WhatsApp enquiries</p><p id="footerPhone">Set your WhatsApp number in the HTML settings</p></div></div><div class="wrap" style="margin-top:28px"><small>© <span id="year"></span> MotoCare Hub. All rights reserved.</small></div></footer>
+<button class="floatwa" onclick="contactWhatsApp('Hello! I would like to enquire about your products.')">☏ WhatsApp</button>
+</div>
+
+<div id="admin">
+<div class="adminbar"><div class="adminbrand">⚙ <span>MOTOCARE</span> / ADMIN</div><button class="mutedbtn" onclick="showStore()">← View Store</button></div>
+<div class="loginbox" id="adminLogin"><h2>Welcome back</h2><p class="sub">Sign in to manage your MotoCare store.</p><label>Username</label><input id="adminUser" value="admin"><label>Password</label><input id="adminPass" type="password" placeholder="Enter admin password"><button class="primary" style="width:100%" onclick="adminSignIn()">Sign in</button><p class="notice" style="margin-top:16px">Demo login: <b>admin / ChangeMe123!</b> Change the credentials in the JavaScript before publishing. Browser-only login is not production security.</p></div>
+<div class="adminwrap" id="adminApp" style="display:none">
+<div class="admin-heading"><div><h1>Store administration</h1><p>Manage your products, access tokens and store activity.</p></div><span class="status">Admin session active</span></div>
+<div class="adminnav"><button class="sel" onclick="adminTab('overview',this)">Overview</button><button onclick="adminTab('manage',this)">Products</button><button onclick="adminTab('tokens',this)">Publish to GitHub</button><button onclick="adminTab('activity',this)">Activity logs</button><button onclick="adminLogout()">Logout</button></div>
+<div id="overview" class="adminview"><div class="metricgrid"><div class="metric">Total products<strong id="mProducts">0</strong></div><div class="metric">Product categories<strong>4</strong></div><div class="metric">GitHub publishing<strong id="mTokens">Ready</strong></div></div><div class="adminpanel"><h3>Welcome to your dashboard</h3><p>Use the navigation above to update your product catalogue, create scoped personal access tokens, or review recent admin activity.</p></div><div class="adminpanel"><h3>Security and storage</h3><p class="notice">This single-file demo stores product edits, token records and activity logs in this browser's localStorage. Generated tokens are demonstration values only; they do not authenticate real server requests. For production use, connect a secure backend and database.</p></div></div>
+<div id="manage" class="adminview" style="display:none"><div class="adminpanel"><h3>Add or edit product</h3><div class="formgrid"><div><label>Product name</label><input id="fName" placeholder="Product name"></div><div><label>Price (₹)</label><input id="fPrice" type="number" min="0" placeholder="Price"></div><div><label>Category</label><select id="fCategory"><option>Bike Care</option><option>Accessories</option><option>Tools</option><option>Modification</option></select></div><div>
+<label>Product image URL (optional)</label><input id="fImage" placeholder="https://...">
+<label>Or upload product image from your device</label>
+<input id="fImageFile" type="file" accept="image/*" onchange="previewProductImage(event)">
+<div id="imagePreview" style="display:none;margin:8px 0 12px"><img id="imagePreviewImg" alt="Product image preview" style="max-width:150px;max-height:120px;object-fit:contain;border:1px solid #d1d9e0;border-radius:8px;padding:5px"><button type="button" class="mutedbtn" onclick="clearProductImage()">Remove image</button></div>
+</div></div><label>Short description</label><input id="fDesc" placeholder="Product details"><p class="sub">Uploaded images are stored in this browser with your product data (localStorage). Use optimized images under 1.5 MB.</p><input type="hidden" id="editId"><button class="primary" onclick="saveProduct()">Save product</button> <button class="mutedbtn" onclick="clearForm()">Clear form</button></div><div class="adminpanel"><h3>Product catalogue</h3><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Actions</th></tr></thead><tbody id="adminProducts"></tbody></table></div></div>
+<div id="tokens" class="adminview" style="display:none">
+<div class="adminpanel github-publish">
+  <h3>Publish to GitHub</h3>
+  <p>After making Admin changes, enter your GitHub token and click Publish. The changes can then be committed to your GitHub repository and appear on your live website.</p>
+  <label for="githubToken"><b>GitHub fine-grained token</b></label>
+  <input id="githubToken" type="password" autocomplete="off" placeholder="Paste token here (not saved)">
+  <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+    <button class="github-publish-btn" onclick="publishToGitHub()">🚀 Publish changes to GitHub</button>
+    <span id="githubPublishStatus" class="sub" aria-live="polite"></span>
+  </div>
+  <p class="github-help">Your token is used only for this publish attempt and is not saved in localStorage. Use a fine-grained token with Contents: Read and write access to the target repository.</p>
+</div>
+<div class="adminpanel">
+  <h3>GitHub repository setup</h3>
+  <p>Before publishing can work, configure your repository details in the JavaScript settings: repository owner, repository name, target branch and the HTML file path. The token input alone cannot identify where to publish.</p>
+</div>
+</div>
+<div id="activity" class="adminview" style="display:none"><div class="adminpanel"><h3>Activity logs</h3><p>Recent actions recorded in this browser.</p><table><thead><tr><th>Time</th><th>Activity</th></tr></thead><tbody id="logRows"></tbody></table></div></div>
+</div></div>
+<script>
+const STORE_NAME='MotoCare Hub';
+const WHATSAPP_NUMBER='91XXXXXXXXXX'; // Replace with your WhatsApp number, digits only, e.g. 919876543210
+const ADMIN_USERNAME='admin';
+const ADMIN_PASSWORD='ChangeMe123!'; // Change before publishing. Real security requires a backend.
+const starter=[
+{name:'MOTUL Petrol System Clean Plus – 5 PCS Combo Pack (50ml Each)',price:888,old:1050,cat:'Bike Care',emoji:'🧴',desc:'Fuel-system care combo pack.'},
+{name:'GLOBAL & MOTUL Bike Care Combo Pack',price:888,old:1154,cat:'Bike Care',emoji:'🧽',desc:'Bike cleaning and maintenance combo.'},
+{name:'Fleettrack Pro GPS (12 Months SIM Recharge)',price:2599,old:5999,cat:'Accessories',emoji:'📍',desc:'GPS tracking device. Check vehicle compatibility.'},
+{name:'ORCA M21 PRO Mobile Holder for Bikes and Scooters',price:1599,old:2999,cat:'Accessories',emoji:'📱',desc:'Zero-vibration, quick-release mobile holder.'},
+{name:'GUN MUSHROOM PLUG PUNCTURE TYRE REPAIR KIT',price:1599,old:2500,cat:'Tools',emoji:'🛠️',desc:'Tubeless tyre puncture repair kit.'},
+{name:'ORCA AIR Cordless Portable Tyre Inflator',price:2999,old:5999,cat:'Tools',emoji:'🛞',desc:'Portable cordless tyre inflator.'}
+];
+let products=JSON.parse(localStorage.getItem('mc_products')||'null')||starter;
+let filter='All';
+const $=id=>document.getElementById(id);
+function persist(){localStorage.setItem('mc_products',JSON.stringify(products))}
+function contactWhatsApp(message){if(!/^\d{10,15}$/.test(WHATSAPP_NUMBER)){alert('Please set your WhatsApp number in the WHATSAPP_NUMBER setting in this HTML file.');return}window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(message),'_blank')}
+function enquire(p){contactWhatsApp('Hello! I am interested in: '+p.name+' | Price: ₹'+p.price+'. Please share more details and availability.')}
+function renderProducts(){let q=$('search').value.toLowerCase();let list=products.filter(p=>(filter==='All'||p.cat===filter)&&(`${p.name} ${p.cat} ${p.desc||''}`).toLowerCase().includes(q));$('resultCount').textContent=list.length+' products';$('products').innerHTML=list.map(p=>`<article class="product"><div class="product-img">${p.image?`<img src="${safe(p.image)}" alt="${safe(p.name)}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="emoji" style="display:none">${p.emoji||'🏍️'}</span>`:`<span class="emoji">${p.emoji||'🏍️'}</span>`}</div><div class="product-body"><span class="tag">${safe(p.cat)}</span><h3>${safe(p.name)}</h3><div class="price">₹${Number(p.price).toLocaleString('en-IN')} ${p.old?`<span class="old">₹${Number(p.old).toLocaleString('en-IN')}</span>`:''}</div><button class="wa" onclick='enquire(${JSON.stringify(p).replace(/'/g,"&#39;")})'>WhatsApp Enquiry</button></div></article>`).join('')||'<p>No products found. Try another search.</p>'}
+function setFilter(v,b){filter=v;document.querySelectorAll('.filters button').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderProducts()}
+function brandFilter(b){$('search').value=b;filter='All';$('catalogue').scrollIntoView({behavior:'smooth'});renderProducts()}
+function safe(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function openAdmin(){$('store').style.display='none';$('admin').style.display='block';history.replaceState(null,'','#admin')}
+function showStore(){$('admin').style.display='none';$('store').style.display='block';history.replaceState(null,'',location.pathname);window.scrollTo(0,0)}
+function adminSignIn(){if($('adminUser').value===ADMIN_USERNAME&&$('adminPass').value===ADMIN_PASSWORD){sessionStorage.setItem('mc_admin','1');$('adminLogin').style.display='none';$('adminApp').style.display='block';log('Admin signed in');adminRender()}else alert('Incorrect username or password')}
+function adminLogout(){sessionStorage.removeItem('mc_admin');$('adminApp').style.display='none';$('adminLogin').style.display='block';$('adminPass').value=''}
+function adminTab(id,b){document.querySelectorAll('.adminview').forEach(x=>x.style.display='none');$(id).style.display='block';document.querySelectorAll('.adminnav button').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');adminRender()}
+let pendingProductImage = '';
+function previewProductImage(event){
+  const file = event.target.files && event.target.files[0];
+  if(!file) return;
+  if(!file.type.startsWith('image/')){alert('Please choose an image file.');event.target.value='';return;}
+  // Keep browser storage practical; large images can exceed localStorage quotas.
+  if(file.size > 1500000){alert('Please choose an image smaller than 1.5 MB.');event.target.value='';return;}
+  const reader = new FileReader();
+  reader.onload = function(){
+    pendingProductImage = String(reader.result || '');
+    $('imagePreviewImg').src = pendingProductImage;
+    $('imagePreview').style.display = 'block';
+    $('fImage').value = '';
+  };
+  reader.readAsDataURL(file);
+}
+function clearProductImage(){
+  pendingProductImage = '';
+  $('fImageFile').value = '';
+  $('fImage').value = '';
+  $('imagePreviewImg').removeAttribute('src');
+  $('imagePreview').style.display = 'none';
+}
+function saveProduct(){let name=$('fName').value.trim(),price=Number($('fPrice').value);if(!name||$('fPrice').value===''||price<0)return alert('Enter a product name and valid price');let p={id:$('editId').value||String(Date.now()),name,price,cat:$('fCategory').value,image:pendingProductImage||$('fImage').value.trim()||(products.find(x=>String(x.id)===String($('editId').value))||{}).image||'',desc:$('fDesc').value.trim(),emoji:'🏍️'};let i=products.findIndex(x=>String(x.id)===String(p.id));if(i>=0)products[i]=p;else products.unshift(p);persist();log((i>=0?'Updated ':'Added ')+name);clearForm();adminRender();renderProducts()}
+function clearForm(){['editId','fName','fPrice','fImage','fDesc'].forEach(id=>$(id).value='');$('fImageFile').value='';pendingProductImage='';$('imagePreview').style.display='none';$('imagePreviewImg').removeAttribute('src');$('fCategory').value='Bike Care'}
+function editProduct(id){let p=products.find(x=>String(x.id)===String(id));if(!p)return;$('editId').value=p.id;$('fName').value=p.name;$('fPrice').value=p.price;$('fCategory').value=p.cat;$('fImage').value=(p.image||'').startsWith('data:')?'':(p.image||'');pendingProductImage=(p.image||'').startsWith('data:')?(p.image||''):'';$('fImageFile').value='';if(p.image){$('imagePreviewImg').src=p.image;$('imagePreview').style.display='block'}else{$('imagePreview').style.display='none';$('imagePreviewImg').removeAttribute('src')}$('fDesc').value=p.desc||'';window.scrollTo(0,0)}
+function deleteProduct(id){if(!confirm('Delete this product?'))return;let p=products.find(x=>String(x.id)===String(id));products=products.filter(x=>String(x.id)!==String(id));persist();log('Deleted '+(p?.name||id));adminRender();renderProducts()}
+function log(msg){let a=JSON.parse(localStorage.getItem('mc_logs')||'[]');a.unshift({time:new Date().toLocaleString(),msg});localStorage.setItem('mc_logs',JSON.stringify(a.slice(0,100)))}
+// GitHub publishing settings. Fill these in before using Publish.
+const GITHUB_OWNER = 'YOUR_GITHUB_USERNAME';
+const GITHUB_REPO = 'YOUR_REPOSITORY_NAME';
+const GITHUB_BRANCH = 'main';
+const GITHUB_FILE_PATH = 'index.html';
+
+async function publishToGitHub(){
+  const token = $('githubToken').value.trim();
+  const status = $('githubPublishStatus');
+  if(!token){alert('Paste your GitHub fine-grained token first.');return;}
+  if(GITHUB_OWNER.startsWith('YOUR_') || GITHUB_REPO.startsWith('YOUR_')){
+    alert('Set GITHUB_OWNER and GITHUB_REPO in the JavaScript settings before publishing.');
+    return;
+  }
+  status.textContent = 'Preparing publish...';
+  // The current storefront/admin HTML is the file payload. GitHub API publishing
+  // needs a repository target and a valid fine-grained token with Contents: write.
+  try{
+    const fileResponse = await fetch(GITHUB_FILE_PATH);
+    if(!fileResponse.ok) throw new Error('Could not read the website HTML file. Host this page with the target HTML file available at the configured path.');
+    const content = await fileResponse.text();
+    const api = `https://api.github.com/repos/${encodeURIComponent(GITHUB_OWNER)}/${encodeURIComponent(GITHUB_REPO)}/contents/${GITHUB_FILE_PATH.split('/').map(encodeURIComponent).join('/')}`;
+    const headers = {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+    const existing = await fetch(api+'?ref='+encodeURIComponent(GITHUB_BRANCH),{headers});
+    let sha = '';
+    if(existing.ok){const data=await existing.json();sha=data.sha;}
+    else if(existing.status!==404){const err=await existing.json().catch(()=>({}));throw new Error(err.message||'GitHub could not read the target file. Check token access and repository settings.');}
+    const payload = {message:'Publish website changes from MotoCare Hub admin',content:btoa(unescape(encodeURIComponent(content))),branch:GITHUB_BRANCH};
+    if(sha) payload.sha=sha;
+    const result=await fetch(api,{method:'PUT',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    const data=await result.json().catch(()=>({}));
+    if(!result.ok) throw new Error(data.message||'GitHub publish failed. Check your token permissions and repository settings.');
+    status.textContent='Published successfully to GitHub.';
+    log('Published website changes to GitHub: '+GITHUB_FILE_PATH);
+    alert('Website file committed to GitHub. Your hosting service may take a short time to update the live site.');
+    $('githubToken').value='';
+  }catch(error){
+    status.textContent='Publish failed.';
+    alert(error.message||'Publish failed.');
+  }
+}
+function adminRender(){$('mProducts').textContent=products.length;$('mTokens').textContent='—';$('adminProducts').innerHTML=products.map(p=>`<tr><td>${safe(p.name)}</td><td>${safe(p.cat)}</td><td>₹${Number(p.price).toLocaleString('en-IN')}</td><td><button class="mutedbtn" onclick="editProduct('${String(p.id).replace(/'/g,'')}')">Edit</button> <button class="danger" onclick="deleteProduct('${String(p.id).replace(/'/g,'')}')">Delete</button></td></tr>`).join('');$('logRows').innerHTML=JSON.parse(localStorage.getItem('mc_logs')||'[]').map(l=>`<tr><td>${safe(l.time)}</td><td>${safe(l.msg)}</td></tr>`).join('')||'<tr><td colspan="2" class="empty">No activity recorded yet.</td></tr>'}
+$('year').textContent=new Date().getFullYear();$('footerPhone').textContent=WHATSAPP_NUMBER.includes('X')?'Edit WhatsApp number in HTML settings':'+'+WHATSAPP_NUMBER;renderProducts();if(location.hash==='#admin')openAdmin();if(sessionStorage.getItem('mc_admin')==='1'){$('adminLogin').style.display='none';$('adminApp').style.display='block';adminRender()}
+</script>
+</body>
+</html>
