@@ -12,7 +12,7 @@
 <section class="section about" id="about"><div class="about-in"><div><div class="eyebrow">ABOUT ANNAMALAI</div><h2>Everything your ride needs.</h2><p class="sub" style="font-size:15px;line-height:1.8">Explore practical bike-care products, maintenance essentials and riding accessories. Contact us for product details, availability and compatibility.</p><button class="btn" onclick="wa('Hello AnnaMalai!')">CONTACT US</button></div><div class="about-art">🧰 🏍️</div></div></section>
 <footer id="contact"><div class="foot"><div><a class="logo" style="color:white" href="#"><b>ANNA</b>MALAI</a><p>Bike spares, care products and riding accessories. Your ride, our care.</p></div><div><h4>QUICK LINKS</h4><a href="#catalogue">Shop products</a><br><a href="#about">About us</a></div><div><h4>CONTACT</h4><p>For product enquiries and support, message us on WhatsApp.</p><a href="#" onclick="wa('Hello AnnaMalai!')">WhatsApp us →</a></div></div><div class="copy">© <span id="year"></span> AnnaMalai. All rights reserved.</div></footer>
 <button class="admin" onclick="document.getElementById('modal').classList.add('show')">⚙ ADMIN</button>
-<div class="modal" id="modal"><div class="panel"><div style="display:flex;justify-content:space-between"><h2>AnnaMalai Admin</h2><button onclick="document.getElementById('modal').classList.remove('show')">✕</button></div><div id="login"><p class="small">Demo login: admin / ChangeMe123!</p><label>Username</label><input id="user"><label>Password</label><input id="pass" type="password"><button class="btn" onclick="login()">LOGIN</button></div><div id="manager" style="display:none"><h3>Add / edit product</h3><div class="grid"><div>Product name<input id="name"></div><div>Category<select id="category"><option>Bike Care</option><option>Accessories</option><option>Tools</option><option>Modification</option></select></div><div>Price<input id="price" type="number"></div><div>Old price<input id="old" type="number"></div><div>Upload image<input id="file" type="file" accept="image/*" onchange="readImage(event)"></div><div>Image URL<input id="url" placeholder="https://..."></div></div><textarea id="desc" placeholder="Description"></textarea><button class="btn" onclick="save()">SAVE PRODUCT</button> <button onclick="clearForm()">CLEAR</button><button onclick="exportJSON()">EXPORT JSON</button><p class="small">Uploaded images are stored in this browser only (local storage), not in cloud storage.</p><div id="list"></div></div></div></div>
+<div class="modal" id="modal"><div class="panel"><div style="display:flex;justify-content:space-between"><h2>AnnaMalai Admin</h2><button onclick="document.getElementById('modal').classList.remove('show')">✕</button></div><div id="login"><p class="small">Demo login: admin / ChangeMe123!</p><label>Username</label><input id="user"><label>Password</label><input id="pass" type="password"><button class="btn" onclick="login()">LOGIN</button></div><div id="manager" style="display:none"><h3>Add / edit product</h3><div class="grid"><div>Product name<input id="name"></div><div>Category<select id="category"><option>Bike Care</option><option>Accessories</option><option>Tools</option><option>Modification</option></select></div><div>Price<input id="price" type="number"></div><div>Old price<input id="old" type="number"></div><div>Upload image<input id="file" type="file" accept="image/*" onchange="readImage(event)"></div><div>Image URL<input id="url" placeholder="https://..."></div></div><textarea id="desc" placeholder="Description"></textarea><button class="btn" onclick="save()">SAVE PRODUCT</button> <button onclick="clearForm()">CLEAR</button><button onclick="exportJSON()">EXPORT JSON</button> <button class="btn" style="background:#24292f;color:white" onclick="publishToGitHub()">PUBLISH TO GITHUB</button><p class="small">GitHub publishing: repository boto80676-sudo/annamalaimotors, branch main. Your token is requested privately when you publish and is not saved in this HTML or browser storage. Use a fine-grained token restricted to this repository with Contents: Read and write.</p><div id="list"></div></div></div></div>
 <script>
 const initial=[{id:'p1',name:'MOTUL Petrol System Clean Plus – 5 PCS Combo Pack',price:888,old:1050,cat:'Bike Care',emoji:'🧴',desc:'Fuel-system care combo pack.'},{id:'p2',name:'GLOBAL & MOTUL Bike Care Combo Pack',price:888,old:1154,cat:'Bike Care',emoji:'🧽',desc:'Bike cleaning and maintenance combo.'},{id:'p3',name:'Fleettrack Pro GPS (12 Months SIM Recharge)',price:2599,old:5999,cat:'Accessories',emoji:'📍',desc:'GPS tracking device. Check compatibility.'},{id:'p4',name:'ORCA M21 PRO Mobile Holder for Bikes and Scooters',price:1599,old:2999,cat:'Accessories',emoji:'📱',desc:'Quick-release mobile holder.'},{id:'p5',name:'GUN MUSHROOM PLUG PUNCTURE TYRE REPAIR KIT',price:1599,old:2500,cat:'Tools',emoji:'🛠️',desc:'Tubeless tyre puncture repair kit.'},{id:'p6',name:'ORCA AIR Cordless Portable Tyre Inflator',price:2999,old:5999,cat:'Tools',emoji:'🛞',desc:'Portable cordless tyre inflator.'}];
 let items=JSON.parse(localStorage.getItem('annamalai_items')||'null')||initial,filter='All',imageData='',editId=null;
@@ -29,5 +29,84 @@ function adminList(){document.getElementById('list').innerHTML='<h3>Products</h3
 function edit(id){let p=items.find(x=>x.id===id);editId=id;name.value=p.name;category.value=p.cat;price.value=p.price;old.value=p.old;desc.value=p.desc;url.value=p.image||'';imageData=p.image&&p.image.startsWith('data:')?p.image:''}
 function removeItem(id){if(confirm('Delete this product?')){items=items.filter(x=>x.id!==id);persist();render();adminList()}}
 function exportJSON(){let a=document.createElement('a'),u=URL.createObjectURL(new Blob([JSON.stringify({store:'AnnaMalai',products:items},null,2)],{type:'application/json'}));a.href=u;a.download='annamalai-data.json';a.click();URL.revokeObjectURL(u)}
-document.getElementById('year').textContent=new Date().getFullYear();render();
+
+const GH_OWNER='boto80676-sudo', GH_REPO='annamalaimotors', GH_BRANCH='main';
+const GH_DATA_PATH='data/annamalai-data.json';
+
+async function loadPublishedProducts(){
+  try{
+    const url=`https://raw.githubusercontent.com/${GH_OWNER}/${GH_REPO}/${GH_BRANCH}/${GH_DATA_PATH}?t=${Date.now()}`;
+    const res=await fetch(url,{cache:'no-store'});
+    if(!res.ok) return;
+    const data=await res.json();
+    if(Array.isArray(data.products)){
+      items=data.products;
+      persist();
+      render();
+    }
+  }catch(err){console.warn('Could not load published products:',err)}
+}
+
+async function githubPut(path, contentBase64, token, message){
+  const api=`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path}`;
+  const headers={
+    'Accept':'application/vnd.github+json',
+    'Authorization':'Bearer '+token,
+    'X-GitHub-Api-Version':'2022-11-28',
+    'Content-Type':'application/json'
+  };
+  let sha;
+  const old=await fetch(api+'?ref='+encodeURIComponent(GH_BRANCH),{headers});
+  if(old.ok){const j=await old.json();sha=j.sha}
+  else if(old.status!==404){throw new Error('GitHub read failed for '+path+': '+old.status+' '+(await old.text()))}
+  const body={message,content:contentBase64,branch:GH_BRANCH};
+  if(sha) body.sha=sha;
+  const put=await fetch(api,{method:'PUT',headers,body:JSON.stringify(body)});
+  if(!put.ok) throw new Error('GitHub upload failed for '+path+': '+put.status+' '+(await put.text()));
+  return put.json();
+}
+function dataUrlToBase64(dataUrl){
+  const part=dataUrl.split(',')[1];
+  if(!part) throw new Error('Invalid image data');
+  return part;
+}
+function extensionFromDataUrl(dataUrl){
+  const m=dataUrl.match(/^data:image\/(png|jpeg|jpg|webp|gif);base64,/i);
+  if(!m) return 'jpg';
+  return m[1].toLowerCase()==='jpeg'?'jpg':m[1].toLowerCase();
+}
+async function publishToGitHub(){
+  if(!items.length){alert('There are no products to publish.');return}
+  const token=prompt('Paste your GitHub fine-grained token for this publishing session. It will not be saved.');
+  if(!token) return;
+  if(!confirm('Publish '+items.length+' products to '+GH_OWNER+'/'+GH_REPO+' on branch '+GH_BRANCH+'?')) return;
+  const btn=[...document.querySelectorAll('button')].find(b=>b.textContent.includes('PUBLISH TO GITHUB'));
+  if(btn){btn.disabled=true;btn.textContent='PUBLISHING...'}
+  try{
+    const published=JSON.parse(JSON.stringify(items));
+    for(let i=0;i<published.length;i++){
+      const p=published[i];
+      if(typeof p.image==='string' && p.image.startsWith('data:image/')){
+        const ext=extensionFromDataUrl(p.image);
+        const imagePath=`assets/products/${String(p.id).replace(/[^a-zA-Z0-9_-]/g,'_')}.${ext}`;
+        await githubPut(imagePath,dataUrlToBase64(p.image),token,'Upload product image '+p.name);
+        p.image=`./${imagePath}`;
+      }
+    }
+    const payload={store:'AnnaMalai',updatedAt:new Date().toISOString(),products:published};
+    const jsonText=JSON.stringify(payload,null,2);
+    const jsonBase64=btoa(unescape(encodeURIComponent(jsonText)));
+    await githubPut(GH_DATA_PATH,jsonBase64,token,'Publish AnnaMalai product catalogue');
+    items=published;
+    persist();
+    render();
+    alert('Published successfully! GitHub Pages may take a few minutes to show the changes.');
+  }catch(err){
+    alert('Publishing failed: '+err.message+'\nCheck that the token is valid, has Contents: Read and write permission, and is authorized for this repository.');
+  }finally{
+    if(btn){btn.disabled=false;btn.textContent='PUBLISH TO GITHUB'}
+  }
+}
+
+document.getElementById('year').textContent=new Date().getFullYear();render();loadPublishedProducts();
 </script></body></html>
