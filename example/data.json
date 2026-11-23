@@ -1,0 +1,81 @@
+{
+  "store": {
+    "name": "MotoCare Hub",
+    "currency": "INR",
+    "whatsappNumber": "91XXXXXXXXXX",
+    "github": {
+      "owner": "boto80676-sudo",
+      "repository": "annamalaimotors",
+      "branch": "main",
+      "website": "https://boto80676-sudo.github.io/annamalaimotors/"
+    }
+  },
+  "categories": [
+    "Bike Care",
+    "Accessories",
+    "Tools",
+    "Modification"
+  ],
+  "products": [
+    {
+      "id": "motul-petrol-system-clean-plus-combo",
+      "name": "MOTUL Petrol System Clean Plus – 5 PCS Combo Pack (50ml Each)",
+      "price": 888,
+      "oldPrice": 1050,
+      "category": "Bike Care",
+      "image": "",
+      "emoji": "🧴",
+      "description": "Fuel-system care combo pack."
+    },
+    {
+      "id": "global-motul-bike-care-combo",
+      "name": "GLOBAL & MOTUL Bike Care Combo Pack",
+      "price": 888,
+      "oldPrice": 1154,
+      "category": "Bike Care",
+      "image": "",
+      "emoji": "🧽",
+      "description": "Bike cleaning and maintenance combo."
+    },
+    {
+      "id": "fleettrack-pro-gps",
+      "name": "Fleettrack Pro GPS (12 Months SIM Recharge)",
+      "price": 2599,
+      "oldPrice": 5999,
+      "category": "Accessories",
+      "image": "",
+      "emoji": "📍",
+      "description": "GPS tracking device. Check vehicle compatibility."
+    },
+    {
+      "id": "orca-m21-pro-mobile-holder",
+      "name": "ORCA M21 PRO Mobile Holder for Bikes and Scooters",
+      "price": 1599,
+      "oldPrice": 2999,
+      "category": "Accessories",
+      "image": "",
+      "emoji": "📱",
+      "description": "Zero-vibration, quick-release mobile holder."
+    },
+    {
+      "id": "gun-mushroom-plug-puncture-kit",
+      "name": "GUN MUSHROOM PLUG PUNCTURE TYRE REPAIR KIT",
+      "price": 1599,
+      "oldPrice": 2500,
+      "category": "Tools",
+      "image": "",
+      "emoji": "🛠️",
+      "description": "Tubeless tyre puncture repair kit."
+    },
+    {
+      "id": "orca-air-cordless-tyre-inflator",
+      "name": "ORCA AIR Cordless Portable Tyre Inflator",
+      "price": 2999,
+      "oldPrice": 5999,
+      "category": "Tools",
+      "image": "",
+      "emoji": "🛞",
+      "description": "Portable cordless tyre inflator."
+    }
+  ]
+}
