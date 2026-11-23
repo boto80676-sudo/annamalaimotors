@@ -1,0 +1,71 @@
+{
+  "store": "AnnaMalai",
+  "updatedAt": "2026-11-23T16:11:07.423Z",
+  "products": [
+    {
+      "id": "p1795450227807",
+      "name": "sam",
+      "cat": "Tools",
+      "price": 10000,
+      "old": 20000,
+      "desc": "buy using website",
+      "emoji": "🏍️",
+      "image": "./assets/products/p1795450227807.jpg"
+    },
+    {
+      "id": "p1",
+      "name": "Sky Net",
+      "cat": "Bike Care",
+      "price": 888,
+      "old": 1050,
+      "desc": "Fuel-system care combo pack.",
+      "emoji": "🏍️",
+      "image": ""
+    },
+    {
+      "id": "p2",
+      "name": "GLOBAL & MOTUL Bike Care Combo Pack",
+      "price": 888,
+      "old": 1154,
+      "cat": "Bike Care",
+      "emoji": "🧽",
+      "desc": "Bike cleaning and maintenance combo."
+    },
+    {
+      "id": "p3",
+      "name": "Fleettrack Pro GPS (12 Months SIM Recharge)",
+      "price": 2599,
+      "old": 5999,
+      "cat": "Accessories",
+      "emoji": "📍",
+      "desc": "GPS tracking device. Check compatibility."
+    },
+    {
+      "id": "p4",
+      "name": "ORCA M21 PRO Mobile Holder for Bikes and Scooters",
+      "price": 1599,
+      "old": 2999,
+      "cat": "Accessories",
+      "emoji": "📱",
+      "desc": "Quick-release mobile holder."
+    },
+    {
+      "id": "p5",
+      "name": "GUN MUSHROOM PLUG PUNCTURE TYRE REPAIR KIT",
+      "price": 1599,
+      "old": 2500,
+      "cat": "Tools",
+      "emoji": "🛠️",
+      "desc": "Tubeless tyre puncture repair kit."
+    },
+    {
+      "id": "p6",
+      "name": "ORCA AIR Cordless Portable Tyre Inflator",
+      "price": 2999,
+      "old": 5999,
+      "cat": "Tools",
+      "emoji": "🛞",
+      "desc": "Portable cordless tyre inflator."
+    }
+  ]
+}
